@@ -1,0 +1,5 @@
+div#catalog-component {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

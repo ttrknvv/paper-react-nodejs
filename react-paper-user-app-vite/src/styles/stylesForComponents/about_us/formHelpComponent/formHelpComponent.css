@@ -1,0 +1,40 @@
+div#form-help-component {
+    display: grid;
+    grid-template-columns: 76% 10%;
+    gap: 2%;
+    height: max-content;
+}
+div#form-help-component input {
+    border-radius: 10px;
+    border: 2px solid #AC7373;
+    padding: 2%;
+    color: #AC7373;
+    font-size: 90%;
+    background-color: transparent;
+    height: max-content;
+}
+
+div#form-help-component input::placeholder {
+    color: #AC7373; 
+}
+
+div#form-help-component input:focus {
+    border: 2px solid #930000;
+    outline: none;
+}
+
+div#form-help-component button {
+    border: none;
+    background-color: #AC7373;
+    border-radius: 10px;
+    color: #FFFFFF;
+}
+
+div#form-help-component button:hover {
+    box-shadow: 0 0 8px #930000;
+}
+
+div#form-help-component button:active {
+    background-color: #930000;
+}
+

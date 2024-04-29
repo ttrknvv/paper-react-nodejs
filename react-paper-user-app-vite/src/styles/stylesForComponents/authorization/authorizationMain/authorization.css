@@ -1,0 +1,7 @@
+main#auth-main {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    padding-top: 3%;
+}

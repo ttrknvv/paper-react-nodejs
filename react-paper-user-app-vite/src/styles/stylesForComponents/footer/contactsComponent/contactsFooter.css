@@ -1,0 +1,15 @@
+div#contact-component {
+    display: grid;
+    gap: 30%;
+    padding-left: 17%;
+}
+
+div#contact-component h4 {
+    color: #930000;
+    font-size: 100%;
+}
+
+div#contact-component p {
+    color: #AC7373;
+    font-size: 90%;
+}

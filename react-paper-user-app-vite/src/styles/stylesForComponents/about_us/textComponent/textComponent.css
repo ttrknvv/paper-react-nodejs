@@ -1,0 +1,11 @@
+div#text-component h1 {
+    font-size: 180%;
+    color: #930000;
+    padding: 8% 0 6% 0;
+}
+
+div#text-component p {
+    color: #AC7373;
+    font-size: 100%;
+    text-align: justify;
+}

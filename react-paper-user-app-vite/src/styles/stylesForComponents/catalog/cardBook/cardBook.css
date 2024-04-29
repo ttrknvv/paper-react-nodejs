@@ -1,0 +1,62 @@
+div#card-book {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 24%;
+    justify-content: center;
+    align-items: center;
+    padding-top: 6%;
+}
+
+div#card-book div#image-section {
+    width: 74%;
+    height: 82%;
+    text-align: center;
+    align-self: center;
+    background-color: aliceblue;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), -4px 0 4px rgba(0, 0, 0, 0.4);
+}
+
+div#card-book div#image-section img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+div#card-book div#name-favourite-section {
+    display: flex;
+    width: 74%;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 4%;
+}
+
+div#card-book div#name-favourite-section p#name-book-text {
+    width: max-content;
+    display: inline-block;
+    color: #AC7373;
+    font-weight: 600;
+    font-size: 100%;
+}
+
+div#card-book div#name-favourite-section img#favourite-type {
+    width: 10%;
+}
+
+div#author-subscribe-section {
+    display: flex;
+    justify-content: space-between;
+    width: 74%;
+    padding-top: 2%;
+}
+
+div#author-subscribe-section p#author-text {
+    font-size: 90%;
+    font-weight: 500;
+    color: #AC7373;
+}
+
+div#author-subscribe-section p#subscribe-type-text {
+    font-size: 90%;
+    font-weight: 800;
+    color: #930000;
+}
