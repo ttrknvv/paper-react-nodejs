@@ -27,7 +27,7 @@ export default function NotFound() {
                             colorPrimaryHover: "#AC7373 "
                         },
                         }}>
-                        <Button type="primary" onClick={() => navigate("/")}>Главная страница</Button>
+                            <Button type="primary" onClick={() => navigate("/")}>Главная страница</Button>
                         </ConfigProvider>
                     </Row>
                 </div>

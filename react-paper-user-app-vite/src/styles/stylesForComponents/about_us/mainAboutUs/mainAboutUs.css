@@ -1,5 +1,57 @@
-main#about-us-component {
-    width: 100%;
-    height:max-content;
+.about-us-component {
+    padding-top: 4%;
 }
+
+.logo-component-style {
+    width: 100%;
+}
+
+.container-text-style {
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+}
+
+.h1-style {
+    font-size: 2.4vw;
+    color: #930000;
+}
+
+.text-style {
+    color: #AC7373;
+    font-size : 1.2vw;
+    text-align: justify;
+}
+
+.header-form {
+    font-size: 1.7vw;
+    font-weight: 400;
+    color: #AC7373
+}
+
+.form-style {
+    width: 100%;
+}
+
+.container-style {
+    width: 100%;
+    justify-content: center;
+}
+
+.form-input-style {
+    background-color: transparent;
+    border: 3px solid #AC7373;
+    padding: 1.6%;
+    font-size: 1vw;
+}
+
+.form-button-style {
+    display: flex;
+    margin-left: 4%;
+    padding: 12.5% 15% 12.5% 15%;    
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9vw;
+}
+
 
