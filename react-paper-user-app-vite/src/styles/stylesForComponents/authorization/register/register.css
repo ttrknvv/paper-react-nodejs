@@ -10,6 +10,14 @@
     font-size: 1.3vw;
 }
 
+.input-data-style-register-last {
+    width: 95%;
+    background-color: transparent;
+    border: 3px solid #AC7373;
+    padding: 1.6%;
+    font-size: 1.3vw;
+}
+
 .ant-input-status-error {
     border-width: 3px !important;
 }

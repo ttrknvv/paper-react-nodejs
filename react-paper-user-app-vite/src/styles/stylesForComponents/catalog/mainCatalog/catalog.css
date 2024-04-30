@@ -5,5 +5,16 @@ div#catalog-component {
 }
 
 .search-book-style {
-    width: 50%;
+    width: 49.5%;
+    margin-left: -4%;
+    border: 3px solid #AC7373;
+    border-radius: 10px;
+    height: 3.5vw;
+    font-size: 1.4vw;
 }
+
+.search-book-style:hover .search-book-style:focus {
+    border: 3px solid #930000;
+}
+
+

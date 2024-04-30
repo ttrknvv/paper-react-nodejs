@@ -18,7 +18,7 @@ export default function App() {
           itemActiveColor: "#930000",
           itemHoverColor: "#930000",
           itemSelectedColor: "#930000",
-          titleFontSizeLG: 25
+          titleFontSizeLG: "1.8vw"
         },
         },
         token: {

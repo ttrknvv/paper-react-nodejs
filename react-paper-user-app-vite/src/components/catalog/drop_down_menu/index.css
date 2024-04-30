@@ -1,11 +1,13 @@
 .menu-style-sort {
     font-size: 1.5vw;
     height: max-content;
-    border: 3px solid #930000;
+    border: 3px solid #AC7373;
+    color: #AC7373;
 }
 
 .menu-style-sort:hover {
-    
+    border: 3px solid #930000 !important;
+    color: #930000 !important;
 }
 
 .ant-dropdown-menu-root > * {

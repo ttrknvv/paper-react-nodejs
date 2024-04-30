@@ -2,54 +2,79 @@ import CardBook from "../card_book/CardBook";
 import "../../../styles/stylesForComponents/catalog/mainCatalog/catalog.css"
 import DropDownMenuSort from "../drop_down_menu/DropDownMenuSort";
 import { Button, Cascader, Dropdown, Flex, Input, Menu, Space } from "antd";
-import { DownOutlined } from '@ant-design/icons';
+import { SearchOutlined } from '@ant-design/icons';
+import { useState } from "react";
 
 
 export default function Catalog() {
-    const items = [
+
+    const sortItems = [
         {
-          label: '1st menu item',
+          label: 'По популярности',
           key: '1',
         },
         {
-          label: '2nd menu item',
+          label: 'По новизне',
           key: '2',
         },
         {
-          label: '3rd menu item',
+          label: 'По оценке',
           key: '3',
         },
         {
-          label: '4rd menu item',
+          label: 'Без сортировки',
           key: '4',
         },
       ];
 
-      const menuProps = {
-        items,
-        onClick: (e) => console.log("click ", e),
+      const sortItemsSubscription = [
+        {
+          label: 'Стандарт',
+          key: '1',
+        },
+        {
+          label: 'Премиум',
+          key: '2',
+        },
+        {
+          label: 'Бесплатные',
+          key: '3',
+        },
+        {
+          label: 'Все книги',
+          key: '4',
+        },
+      ];
+
+      const menuPropsSort = {
+        items: sortItems,
+        onClick: (e) => {
+          console.log("click ", e.key)
+        },
+        selectable: true,
+        defaultSelectedKeys: ['4']
       };
 
-      const {Search} = Input;
+      const menuPropsSortSubscription = {
+        items: sortItemsSubscription,
+        onClick: (e) => console.log("click ", e.key),
+        selectable: true,
+        defaultSelectedKeys: ['4']
+      };
 
-      const menu = (
-        <Menu>
-          <Menu.Item key="1">Option 1</Menu.Item>
-          <Menu.Item key="2">Option 2</Menu.Item>
-          <Menu.Item key="3">Option 3</Menu.Item>
-          <Menu.Item key="3">Option 3</Menu.Item>
-
-        </Menu>
-      );
+      const onEnter = (event) => console.log(event.target.value);
 
     return (
-        <main id="catalog-component">
+        <main>
             <Flex wrap gap={"8%"} align="center" style={{margin: "2% 3% 0 4%"}}>
-                <DropDownMenuSort propsMenu={menuProps}
-                    nameMenu={"Без сортировки"}/>
-                <DropDownMenuSort propsMenu={menuProps}
-                    nameMenu={"Подписка"}/>
-                 <Search className="search-book-style" placeholder="Мне бы книгу..." />
+                <DropDownMenuSort propsMenu={menuPropsSort}
+                    nameMenu={"Выбор сортировки"} />
+                <DropDownMenuSort propsMenu={menuPropsSortSubscription}
+                    nameMenu={"По подписке"} />
+                 <Input suffix={<SearchOutlined />}
+                       placeholder="Ищем книгу..."
+                       className="search-book-style"
+                       onPressEnter={onEnter} />
             </Flex>
            
             <div id="catalog-component">

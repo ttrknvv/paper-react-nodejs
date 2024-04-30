@@ -59,27 +59,6 @@ export default function Register() {
                         </Col>
                         <Col span={12}>
                             <InputControl control={control} 
-                                    name={"password"} 
-                                    headerInput="Пароль" 
-                                    classNameHeaderInput={"header-input-style"}
-                                    classNameInput={"input-data-style-register"}
-                                    placeHolder={"Пароль"}
-                                    rules={[
-                                        {
-                                            required: true,
-                                            message: 'Пожалуйста, введите пароль!',
-                                        },
-                                    ]}
-                                    maxLength={100}
-                                    minLength={3}
-                                    type="password"/>
-                        </Col>
-                    
-                    </Row>
-                    
-                    <Row>
-                        <Col span={12}>
-                            <InputControl control={control} 
                                     name={"phoneNumber"} 
                                     headerInput="Номер телефона" 
                                     classNameHeaderInput={"header-input-style"}
@@ -95,13 +74,54 @@ export default function Register() {
                                     minLength={3}
                                     suffixText={"Логин да да да"}/>
                         </Col>
+                    
+                    </Row>
+                    
+                    <Row>
+                        <Col span={12}>
+                        <InputControl control={control} 
+                                    name={"password"} 
+                                    headerInput="Пароль" 
+                                    classNameHeaderInput={"header-input-style"}
+                                    classNameInput={"input-data-style-register"}
+                                    placeHolder={"Пароль"}
+                                    rules={[
+                                        {
+                                            required: true,
+                                            message: 'Пожалуйста, введите пароль!',
+                                        },
+                                    ]}
+                                    maxLength={100}
+                                    minLength={3}
+                                    type="password"/>
+                            
+                        </Col>
 
                         <Col span={12}>
                             <InputControl control={control} 
+                                    name={"acceptPassword"} 
+                                    headerInput="Подтверждение пароля" 
+                                    classNameHeaderInput={"header-input-style"}
+                                    classNameInput={"input-data-style-register"}
+                                    placeHolder={"Пароль"}
+                                    rules={[
+                                        {
+                                            required: true,
+                                            message: 'Пожалуйста, введите электронную почту!',
+                                        },
+                                    ]}
+                                    maxLength={100}
+                                    minLength={3}
+                                    type="password"/>
+                        </Col>
+                    </Row>
+
+                    <Row>
+                        <InputControl control={control} 
                                     name={"email"} 
                                     headerInput="Электронная почта" 
                                     classNameHeaderInput={"header-input-style"}
-                                    classNameInput={"input-data-style-register"}
+                                    classNameInput={"input-data-style-register-last"}
                                     placeHolder={"Электронная почта"}
                                     rules={[
                                         {
@@ -111,8 +131,8 @@ export default function Register() {
                                     ]}
                                     maxLength={100}
                                     minLength={3}
+                                    widthContainer="100%"
                                     suffixText={"Логин да да да"}/>
-                        </Col>
                     </Row>
                         
                         

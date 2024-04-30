@@ -1,0 +1,23 @@
+.container-card-button {
+    width: 22%;
+    height: max-content;
+}
+
+.container-card {
+    color: #AC7373;
+
+}
+
+.image-style-book {
+    width: 90%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), -4px 0 4px rgba(0, 0, 0, 0.4);
+}
+
+.favourite-icon-styl {
+    width: 10%;
+}
+
+.name-book-style {
+    color: #AC7373;
+    font-size: 1vw;
+}

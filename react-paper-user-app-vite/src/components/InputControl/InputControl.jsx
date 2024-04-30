@@ -15,7 +15,8 @@ export default function InputControl({
     classNameInput,
     headerInput,
     classNameHeaderInput,
-    suffixText})
+    suffixText,
+    widthContainer})
 {
         switch(type) {
             case "default":
@@ -23,7 +24,7 @@ export default function InputControl({
                     name={name}
                     control={control}
                     render={({field}) => 
-                        <div>
+                        <div style={{width: widthContainer}}>
                             {headerInput && <><div className={classNameHeaderInput} style={{marginBottom: "1%"}}>{headerInput}</div></>}
                             <Form.Item
                                 name={name}
