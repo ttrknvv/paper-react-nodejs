@@ -19,11 +19,12 @@ export default function App() {
           itemHoverColor: "#930000",
           itemSelectedColor: "#930000",
           titleFontSizeLG: 25
-        }},
+        },
+        },
         token: {
             colorPrimary: '#AC7373',
             colorBgContainer: "transparent",
-            colorErrorBorderHover: "#ed4d4e"
+            colorErrorBorderHover: "#ed4d4e",
         }
     };
 

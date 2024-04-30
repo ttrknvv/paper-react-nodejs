@@ -1,31 +1,20 @@
-import { useState } from "react";
-import "../../../styles/stylesForComponents/catalog/dropDownMenu/menuSort.css"
+import "./index.css"
+import { Space, Button, Dropdown } from "antd";
+import { DownOutlined } from '@ant-design/icons';
 
-export default function DropDownMenuSort()
+export default function DropDownMenuSort({propsMenu, nameMenu})
 {
 
-    const [isOpen, setIsOpen] = useState(false);
-
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
-    };
-
     return (
-        <div id="dropdown" onClick={toggleMenu}>
-            <div id="arrow-section">
-                <span>Без сортировки</span>
-                <img src="/ProjectImages/arrow.png"/>
-            </div>
-            {isOpen && (
-                <div id="dropdown-content">
-                <ul>
-                    <li>Без сортировки</li>
-                    <li>Сначала популярные</li>
-                    <li>Сначала новые</li>
-                    <li>Сначала старые</li>
-                </ul>
-                </div>
-            )}
-        </div>
+        <Space wrap>
+            <Dropdown className="menu-style-sort" menu={propsMenu}>
+                <Button className="button-in-menu">
+                    <Space>
+                        {nameMenu}
+                        <DownOutlined />
+                    </Space>
+                </Button>
+            </Dropdown>
+        </Space>
   );
 }

@@ -3,3 +3,7 @@ div#catalog-component {
     flex-direction: row;
     flex-wrap: wrap;
 }
+
+.search-book-style {
+    width: 50%;
+}

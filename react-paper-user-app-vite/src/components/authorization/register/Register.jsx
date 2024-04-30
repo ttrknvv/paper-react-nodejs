@@ -54,7 +54,8 @@ export default function Register() {
                                         },
                                     ]}
                                     maxLength={100}
-                                    minLength={3}/>
+                                    minLength={3}
+                                    suffixText={"Логин да да да"}/>
                         </Col>
                         <Col span={12}>
                             <InputControl control={control} 
@@ -91,7 +92,8 @@ export default function Register() {
                                         },
                                     ]}
                                     maxLength={100}
-                                    minLength={3}/>
+                                    minLength={3}
+                                    suffixText={"Логин да да да"}/>
                         </Col>
 
                         <Col span={12}>
@@ -108,7 +110,8 @@ export default function Register() {
                                         },
                                     ]}
                                     maxLength={100}
-                                    minLength={3}/>
+                                    minLength={3}
+                                    suffixText={"Логин да да да"}/>
                         </Col>
                     </Row>
                         
@@ -116,7 +119,6 @@ export default function Register() {
                 <Form.Item>
                     <Flex justify="center">
                         <Button className="button-style-register" type="primary" htmlType="submit">Войти</Button>
-                        
                     </Flex>
                 </Form.Item>
             </Form>

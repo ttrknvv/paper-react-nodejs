@@ -1,4 +1,5 @@
-import { Input, Form } from "antd";
+import { Input, Form, Tooltip } from "antd";
+import { InfoCircleOutlined } from '@ant-design/icons';
 import { Controller } from "react-hook-form";
 import "./index.css"
 
@@ -13,7 +14,8 @@ export default function InputControl({
     type = "default", 
     classNameInput,
     headerInput,
-    classNameHeaderInput})
+    classNameHeaderInput,
+    suffixText})
 {
         switch(type) {
             case "default":
@@ -27,7 +29,15 @@ export default function InputControl({
                                 name={name}
                                 rules={rules}
                                 >
-                                    <Input className={classNameInput} {...field} maxLength={maxLength} minLength={minLength} placeholder={placeHolder} />
+                                    <Input className={classNameInput} 
+                                            {...field} 
+                                            maxLength={maxLength} 
+                                            minLength={minLength} 
+                                            placeholder={placeHolder}
+                                            suffix={suffixText && 
+                                                <Tooltip title={suffixText}>
+                                                    <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)' }} />
+                                                </Tooltip>} />
                             </Form.Item> 
                         </div>}/>
                 );
@@ -41,7 +51,12 @@ export default function InputControl({
                                 <Form.Item
                                     name={name}
                                     rules={rules}>
-                                        <Input.Password {...field} className={classNameInput} maxLength={maxLength} minLength={minLength} placeholder={placeHolder} autoComplete="off" />
+                                        <Input.Password {...field} 
+                                            className={classNameInput} 
+                                            maxLength={maxLength} 
+                                            minLength={minLength} 
+                                            placeholder={placeHolder}
+                                            autoComplete="off" />
                                 </Form.Item>
                             </div>} />)
         }

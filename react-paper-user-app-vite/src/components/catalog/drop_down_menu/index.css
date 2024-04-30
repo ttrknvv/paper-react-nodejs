@@ -1,0 +1,13 @@
+.menu-style-sort {
+    font-size: 1.5vw;
+    height: max-content;
+    border: 3px solid #930000;
+}
+
+.menu-style-sort:hover {
+    
+}
+
+.ant-dropdown-menu-root > * {
+    font-size: 1.4vw !important;
+}
