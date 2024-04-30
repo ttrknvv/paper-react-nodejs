@@ -1,28 +1,33 @@
-div#photo-component-login {
-    width: 38%;
-    height: 40%;
-}
-
-div#photo-component-login img {
-    width: 80%;
-    padding-left: 10%;
-}
-
-div#form-for-input-login {
-    width: 62%;
-}
-
-div#form-for-input-login form {
-    display: flex;
+.form-style {
     width: 100%;
-    height: 90%;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 10%;
 }
 
-div#form-for-input-login form button {
-    width: 200px;
+.input-data-style {
+    width: 50%;
+    background-color: transparent;
+    border: 3px solid #AC7373;
+    padding: 1.6%;
+    font-size: 1.3vw;
+}
+
+.ant-input-status-error {
+    border-width: 3px !important;
+}
+
+.button-style {
+    display: flex;
+    padding: 3% 5% 3% 5%;    
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2vw;
+}
+
+.button-style:hover {
+    background-color: #AC7373 !important;
+    box-shadow: 0 0 8px #930000;
+}
+
+.button-style:active {
+    background-color: #8d5858 !important;
 }
 

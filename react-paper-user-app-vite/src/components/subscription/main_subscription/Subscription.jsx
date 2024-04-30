@@ -5,12 +5,12 @@ import { subscriptions } from "../../../data/dataForSubscription/dataForSubscrip
 export default function Subscription()
 {
     return(
-        <main id="subscription-component">
-            {subscriptions.map((element, index, array) => <CardSubscription image = {element.icon} 
+        <main className="subscription-list-style">
+            {subscriptions.map((element) => <CardSubscription image = {element.icon} 
                                                                                title = {element.title} 
                                                                                cost = {element.cost}
                                                                                description = {element.description}
-                                                                               key = {index} />)}
+                                                                               key = {element.id} />)}
 
         </main>
     )

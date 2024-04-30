@@ -1,21 +1,21 @@
 import { Col, Row } from "antd"
-import "../../../styles/stylesForComponents/footer/payingComponent/payingComponent.css"
+import "../../../styles/stylesForComponents/footer/mainFooter/footer.css"
 
 export default function Paying()
 {
     return (
-        <Row>
+        <Row className="paying-style">
             <Row>
                 <h4>Принимаем к оплате</h4>
             </Row>
-            <Row>
-                <Col>
+            <Row className="icons-container-style">
+                <Col span={5}>
                     <img src="/ProjectImages/VisaType.png" />
                 </Col>
-                <Col>
+                <Col span={4}> 
                     <img src="/ProjectImages/MasterCardType.png" />
                 </Col>
-                <Col>
+                <Col span={4    }>
                     <img src="/ProjectImages/WorldType.png" />
                 </Col>
             </Row>

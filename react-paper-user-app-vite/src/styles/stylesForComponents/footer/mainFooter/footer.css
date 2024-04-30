@@ -1,5 +1,43 @@
 .footer-style {
     display: flex;
-    justify-content: center;
     align-items: center;
+    margin: 2% 0 1% 0;
+    height: max-content;
 }
+
+.contacts-style {
+    display: flex;
+    flex-direction: column;
+    padding-left: 4%;
+}
+
+.contacts-style h4 {
+    margin-bottom: 7%;
+    color: #930000;
+    font-size: 1.3vw;
+    font-weight: 400;
+}
+
+.contacts-style p {
+    color: #AC7373;
+    font-size: 1.2vw;
+}
+
+.paying-style {
+    display: flex;
+    flex-direction: column;
+}
+
+.paying-style h4 {
+    color: #930000;
+    font-size: 1.3vw;
+    font-weight: 400;
+}
+
+.icons-container-style {
+    display: flex;
+    align-items: center;
+    margin-top: 3%;
+}
+
+

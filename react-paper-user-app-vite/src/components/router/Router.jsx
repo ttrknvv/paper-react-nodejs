@@ -11,6 +11,7 @@ const NotFound = lazy(() =>  import("../notFound/NotFound"))
 
 
 
+
 export const Router = () =>
 {
     return (
@@ -26,7 +27,7 @@ export const Router = () =>
                                 </CommonLayout>
                         ),
                         children: [
-                            { element: <AboutUs />, index: true },
+                            { element: <NotFound />, index: true },
                             {
                               path: "/catalog",
                               element: <Catalog />,
@@ -42,6 +43,10 @@ export const Router = () =>
                             {
                                 path: "/about",
                                 element: <AboutUs />, 
+                            },
+                            {
+                                path: "/profile",
+                                element: <Authorization />, 
                             },
                         ]
                     }

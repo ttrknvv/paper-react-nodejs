@@ -6,12 +6,14 @@ export const subscriptions = [
         icon: standart,
         title: "Стандарт",
         cost: 20,
-        description: "Ограниченный каталог книг"
+        description: "Ограниченный каталог книг",
+        id: 1
     },
     {
         icon: premium,
         title: "Премиум",
         cost: 30,
-        description: "Доступны все книги"
+        description: "Доступны все книги",
+        id: 2
     },
 ]

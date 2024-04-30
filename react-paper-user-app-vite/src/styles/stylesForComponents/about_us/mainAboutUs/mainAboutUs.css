@@ -45,13 +45,30 @@
     font-size: 1vw;
 }
 
+.error-style {
+    padding: 2%;
+}
+
 .form-button-style {
     display: flex;
     margin-left: 4%;
     padding: 12.5% 15% 12.5% 15%;    
     justify-content: center;
     align-items: center;
-    font-size: 0.9vw;
+    font-size: 1vw;
+}
+
+.form-button-style:hover {
+    background-color: #AC7373 !important;
+    box-shadow: 0 0 8px #930000;
+}
+
+.form-button-style:active {
+    background-color: #8d5858 !important;
+}
+
+.ant-input-status-error {
+    border-width: 3px !important;
 }
 
 

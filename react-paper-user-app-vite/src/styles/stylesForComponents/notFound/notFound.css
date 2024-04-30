@@ -19,10 +19,11 @@
     justify-content: flex-start;
     height: 40%;
     width: 100%;
+    padding-left: 5%;
 }
 
 .h1-style {
-    padding: 5% 0 0 5%;
+    margin-top: 5%;
     width: 100%;
 }
 
@@ -36,24 +37,32 @@
 }
 
 .p-style p {
-    padding: 2% 0 0 5%;
+    margin-top: 2%;
     color: #AC7373;
     font-size: 1.5vw;
 }
 
 .button-style {
-    padding: 5% 0 3% 5%;
+    margin-top: 5%;
     height: 100%;
     width: 100%;
 }
 
 .button-style button {
-    height: 100%;
-    padding: 3%;
+    padding: 5% 4% 5% 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: none;
 }
 
 .button-style button:hover {
+    background-color: #AC7373 !important;
     box-shadow: 0 0 8px #930000;
+}
+
+.button-style button:active {
+    background-color: #8d5858 !important;
 }
 
 .button-style button span {

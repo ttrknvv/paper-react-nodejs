@@ -20,15 +20,7 @@ export default function NotFound() {
                         <p>Вернитесь, пожалуйста, на главную страницу!)</p>
                     </Row>
                     <Row className="button-style">
-                    <ConfigProvider
-                        theme={{
-                        token: {
-                            colorPrimary: '#AC7373',
-                            colorPrimaryHover: "#AC7373 "
-                        },
-                        }}>
-                            <Button type="primary" onClick={() => navigate("/")}>Главная страница</Button>
-                        </ConfigProvider>
+                            <Button type="primary" htmlType="button" onClick={() => navigate("/")}>Главная страница</Button>
                     </Row>
                 </div>
                 

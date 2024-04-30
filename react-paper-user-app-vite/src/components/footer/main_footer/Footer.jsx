@@ -8,13 +8,13 @@ export default function Footer()
     return (
         <footer>
             <Row className="footer-style">
-                <Col span={3}>
+                <Col span={5} offset={1}>
                     <img src="/ProjectImages/LogoImage.png"/>
                 </Col>
-                <Col span={15}>
+                <Col span={11}>
                     <Contact />
                 </Col>
-                <Col span={6}>
+                <Col span={7}>
                     <Paying />
                 </Col>
             </Row>

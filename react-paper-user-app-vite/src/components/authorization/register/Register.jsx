@@ -1,5 +1,3 @@
-import Button from "../button/Button";
-import InputData from "../input_data_component/InputData";
 import "../../../styles/stylesForComponents/authorization/register/register.css"
 import { useNavigate } from "react-router-dom";
 
@@ -13,10 +11,7 @@ export default function Register() {
     
     return (
         <>
-            <div id="photo-component">
-                <img src="/ProjectImages/Register.png" alt="" />
-            </div>
-            <div id="form-for-input-register">
+            {/* <div id="form-for-input-register">
                 <a onClick={navTo}>Войти</a><a>Зарегистрироваться</a>
                 <form>
                     <InputData nameInput={"login-login"} textForInput={"Логин"}/>
@@ -25,7 +20,7 @@ export default function Register() {
                     <InputData nameInput={"email-login"} textForInput={"Электронная почта"}/>
                     <Button />
                 </form>
-            </div>
+            </div> */}
         </>
         
     )
