@@ -9,13 +9,13 @@ export default function Paying()
                 <h4>Принимаем к оплате</h4>
             </Row>
             <Row className="icons-container-style">
-                <Col span={5}>
+                <Col span={4}>
                     <img src="/ProjectImages/VisaType.png" />
                 </Col>
                 <Col span={4}> 
                     <img src="/ProjectImages/MasterCardType.png" />
                 </Col>
-                <Col span={4    }>
+                <Col span={4}>
                     <img src="/ProjectImages/WorldType.png" />
                 </Col>
             </Row>

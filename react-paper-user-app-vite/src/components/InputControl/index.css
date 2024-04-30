@@ -1,0 +1,7 @@
+.ant-input:-webkit-autofill,
+.ant-input:-webkit-autofill:hover,
+.ant-input:-webkit-autofill:focus,
+.ant-input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 920px #F1EDE2 inset !important;
+  box-shadow: inset 0px 0px 0px 920px #f3f2eb !important;
+}

@@ -11,7 +11,12 @@ export default function Authorization() {
           children: (<LogIn />),
         },
         {
-          key: '2',
+            key: '2',
+            label: '|',
+            disabled: true,
+        },
+        {
+          key: '3',
           label: 'Регистрация',
           children: (<Register />),
         },
@@ -23,8 +28,8 @@ export default function Authorization() {
                 <Col span={8} offset={1}>
                     <img className="image-style" src="/ProjectImages/Register.png" alt="" />
                 </Col>
-                <Col span={15}>
-                    <Tabs defaultActiveKey="1" items={items} />
+                <Col span={14} style={{marginLeft: "0.3%"}}>
+                    <Tabs size="large" defaultActiveKey="1" items={items} />
                 </Col>
             </Row>
             

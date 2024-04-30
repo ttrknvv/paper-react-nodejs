@@ -3,13 +3,32 @@ import { useForm, Controller } from 'react-hook-form';
 import { helpMessageScheme } from "../../../schemes/schemeHelp";
 import { yupResolver } from "@hookform/resolvers/yup";
 import "../../../styles/stylesForComponents/about_us/mainAboutUs/mainAboutUs.css"
+import React from "react";
 
 export default function FormHelp()
 {
     const { control, handleSubmit ,formState: {errors},} = useForm({resolver: yupResolver(helpMessageScheme)});
 
+    const [messageApi, contextHolder] = message.useMessage();
+    const key = 'updatable';
+    const success = () => {
+        
+        messageApi.open({
+            key,
+            type: 'loading',
+            content: 'Отправка сообщения...',
+            duration: 0
+          });
+
+          setTimeout(() => {messageApi.open({
+            key, 
+            type: 'success',
+            content: "Сообщение успешно отправлено! Ожидайте ответа в течение 3-ех рабочих дней."
+          })}, 2000)
+          
+    };
     const onSubmit = (data) => {
-        message.success("Сообщение успешно отправлено! Ожидайте ответа в течение 3-ех рабочих дней.")
+        success('dddd');
         console.log(data);
     }
 
@@ -24,10 +43,9 @@ export default function FormHelp()
         <Form
             form={form}
             onFinish={handleSubmit(onSubmit)}
-            onFinishFailed={ onErrorSubmit}
+            onFinishFailed={onErrorSubmit}
             autoComplete="off"
-            className="form-style"
-        >
+            className="form-style">
             <Row className="container-style">
                 <Col span={18}>
                     <Form.Item>
@@ -43,7 +61,7 @@ export default function FormHelp()
                     control={control}
                     render={({field}) => 
                         <Form.Item
-                        name={"helpMessage"}
+                            name={"helpMessage"}
                             rules={[
                                     {
                                         required: true,
@@ -56,6 +74,7 @@ export default function FormHelp()
                 <Col span={4} className="form-container-button-style">
                     <Form.Item>
                                 <Button className="form-button-style" type="primary" htmlType="submit">
+                                    {contextHolder}
                                     Отправить
                                 </Button>
                     </Form.Item>

@@ -26,6 +26,7 @@
 .paying-style {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .paying-style h4 {
@@ -37,7 +38,16 @@
 .icons-container-style {
     display: flex;
     align-items: center;
-    margin-top: 3%;
+    padding-top: 3%;
+    width: 100%;
+}
+
+.icons-container-style img {
+    scale: 110%;
+}
+
+.element-footer-style {
+    height: 100%;
 }
 
 

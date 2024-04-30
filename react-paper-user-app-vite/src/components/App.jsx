@@ -11,7 +11,14 @@ export default function App() {
             activeBorderColor: "#930000",
             hoverBg: "transparent",
             hoverBorderColor: "#930000",
-            inputFontSize: 20
+            inputFontSize: 20,
+        },
+        Tabs: {
+          itemColor: "#AC7373",
+          itemActiveColor: "#930000",
+          itemHoverColor: "#930000",
+          itemSelectedColor: "#930000",
+          titleFontSizeLG: 25
         }},
         token: {
             colorPrimary: '#AC7373',

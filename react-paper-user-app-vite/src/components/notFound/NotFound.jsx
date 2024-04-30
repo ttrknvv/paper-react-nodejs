@@ -19,7 +19,7 @@ export default function NotFound() {
                     <Row className="p-style">
                         <p>Вернитесь, пожалуйста, на главную страницу!)</p>
                     </Row>
-                    <Row className="button-style">
+                    <Row className="button-style-main">
                             <Button type="primary" htmlType="button" onClick={() => navigate("/")}>Главная страница</Button>
                     </Row>
                 </div>

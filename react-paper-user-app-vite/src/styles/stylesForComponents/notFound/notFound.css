@@ -38,17 +38,17 @@
 
 .p-style p {
     margin-top: 2%;
-    color: #AC7373;
+    color: hsl(0, 26%, 56%);
     font-size: 1.5vw;
 }
 
-.button-style {
+.button-style-main {
     margin-top: 5%;
     height: 100%;
     width: 100%;
 }
 
-.button-style button {
+.button-style-main button {
     padding: 5% 4% 5% 4%;
     display: flex;
     justify-content: center;
@@ -56,16 +56,16 @@
     box-shadow: none;
 }
 
-.button-style button:hover {
+.button-style-main button:hover {
     background-color: #AC7373 !important;
     box-shadow: 0 0 8px #930000;
 }
 
-.button-style button:active {
+.button-style-main button:active {
     background-color: #8d5858 !important;
 }
 
-.button-style button span {
+.button-style-main button span {
     font-size: 1.4vw;
     font-weight: 400;
     color: #F1EDE2;

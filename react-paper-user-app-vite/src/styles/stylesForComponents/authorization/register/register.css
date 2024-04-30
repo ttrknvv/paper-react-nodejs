@@ -1,27 +1,43 @@
-div#photo-component {
-    width: 38%;
-    height: 40%;
-}
-
-div#photo-component img {
-    width: 80%;
-    padding-left: 10%;
-}
-
-div#form-for-input-register {
-    width: 62%;
-}
-
-div#form-for-input-register form {
-    display: flex;
+.form-style {
     width: 100%;
-    height: 90%;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
 }
 
-div#form-for-input-register form button {
-    width: 200px;
+.input-data-style-register {
+    width: 90%;
+    background-color: transparent;
+    border: 3px solid #AC7373;
+    padding: 3%;
+    font-size: 1.3vw;
 }
+
+.ant-input-status-error {
+    border-width: 3px !important;
+}
+
+.button-style-register {
+    display: flex;
+    padding: 3% 5% 3% 5%;    
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2vw;
+    margin-top: 1%;
+    margin-right: 3%;
+}
+
+.button-style-register:hover {
+    background-color: #AC7373 !important;
+    box-shadow: 0 0 8px #930000;
+}
+
+.button-style-register:active {
+    background-color: #8d5858 !important;
+}
+
+.header-input-style {
+    font-size: 1.1vw;
+    color: #930000;
+    font-weight: 600;
+}
+
+
 
