@@ -1,0 +1,36 @@
+.search-book-style {
+    margin-top: 4%;
+    width: 40%;
+    border: 3px solid #AC7373;
+    border-radius: 50px;
+    height: 3.5vw;
+    font-size: 1vw;
+    padding-left: 2%;
+}
+
+.search-book-style:hover .search-book-style:focus {
+    border: 3px solid #930000;
+}
+
+.good-style-text {
+    color: #AC7373;
+    font-size: 2.4vw;
+    font-weight: 500;
+}
+
+.container-good-icons img {
+    width: 21%;
+}
+
+.sub-text-style-header {
+    font-size: 1.6vw;
+    color: #930000;
+    font-weight: 600;
+}
+
+.sub-text-style {
+    margin: 7%;
+    font-size: 1.5vw;
+    color: #AC7373;
+    width: 74%;
+}

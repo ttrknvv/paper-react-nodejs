@@ -9,7 +9,7 @@ export default function Footer()
         <footer>
             <Row className="footer-style">
                 <Col span={5} offset={1}>
-                    <img src="/ProjectImages/LogoImage.png"/>
+                    <img className="symbol-footer-style" src="/ProjectImages/LogoImage.png"/>
                 </Col>
                 <Col span={11}>
                     <Contact />

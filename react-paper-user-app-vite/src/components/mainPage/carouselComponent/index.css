@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+
+.carousel-book-style-container {
+    margin-top: 2%;
+    width: 90vw;
+    padding-bottom: 2%;
+}
+
+.carousel-book-style-container button {
+    background-color: #930000 !important;
+}
+
+.description-style-book {
+    height: 28vw;
+    width: 26vw;
+    background-color: #930000;
+    border-radius: 5px;
+}
+
+.description-style-book-p {
+    -webkit-line-clamp:16;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    color: #F1EDE2;
+    font-weight: 300;
+    font-size: 1vw;
+    text-align: justify;
+    overflow: hidden;
+    margin: 6.5% 3.5% 5.5% 3.5%;
+}
+
+.first-book-style {
+    height: 32vw;
+    width: 22vw;
+    z-index: 1;
+}
+
+.first-book-style > img {
+    height: 100%;
+    width: 100%;
+}
+
+.second-book-style {
+    overflow: hidden;
+    width: 10vw;
+}
+
+.second-book-style > img {
+    width: 20vw;
+}
+
+.third-book-style {
+    overflow: hidden;
+    width: 9vw;
+}
+
+.third-book-style > img {
+    width: 18vw;
+}
+
+.fourth-book-style {
+    overflow: hidden;
+    width: 8vw;
+}
+
+.fourth-book-style > img {
+    width: 16vw;
+}

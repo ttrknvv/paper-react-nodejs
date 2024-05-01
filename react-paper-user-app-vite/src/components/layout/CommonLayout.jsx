@@ -9,8 +9,6 @@ import { useEffect } from "react"
 
 export default function CommonLayout({children})  {
 
-    console.log(children)
-
     return (
         <Layout className="main-style">
             <AppHeader />

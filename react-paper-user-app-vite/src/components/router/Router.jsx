@@ -8,6 +8,8 @@ const Catalog = lazy(() =>  import("../catalog/main_catalog/Catalog"))
 const Authorization = lazy(() =>  import("../authorization/authorization_main/authorization"))
 const Subscription = lazy(() =>  import("../subscription/main_subscription/Subscription"))
 const NotFound = lazy(() =>  import("../notFound/NotFound"))
+const MainPage = lazy(() =>  import("../mainPage/MainPage"))
+
 
 
 
@@ -27,7 +29,7 @@ export const Router = () =>
                                 </CommonLayout>
                         ),
                         children: [
-                            { element: <NotFound />, index: true },
+                            { element: <MainPage />, index: true },
                             {
                               path: "/catalog",
                               element: <Catalog />,
