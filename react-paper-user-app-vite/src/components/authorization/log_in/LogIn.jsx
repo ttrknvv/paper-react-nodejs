@@ -3,10 +3,11 @@ import InputControl from "../../InputControl/InputControl";
 import { Button, Form, Input, message } from "antd";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import {logInBookScheme} from "../../../schemes/schemeHelp";
 
 export default function LogIn()
 {
-    const { control, handleSubmit ,formState: {errors},} = useForm();
+    const { control, handleSubmit ,formState: {errors},} = useForm({resolver: yupResolver(logInBookScheme)} );
     const [form] = Form.useForm();
 
     const onSubmit = (data) => {
@@ -14,12 +15,14 @@ export default function LogIn()
         console.log(data);
     }
 
-    const onErrorSubmit = (data) => console.log(data);
+    const onErrorSubmit = (data) => {
+        console.log("error", errors)
+    };
 
     return (
             <Form
                 form={form}
-                onFinish={handleSubmit(onSubmit)}
+                onFinish={handleSubmit(onSubmit, onErrorSubmit)}
                 onFinishFailed={onErrorSubmit}
                 className="form-style">
                     <InputControl control={control} 
@@ -34,8 +37,8 @@ export default function LogIn()
                                             message: 'Пожалуйста, введите логин пользователя!',
                                         },
                                     ]}
-                                    maxLength={100}
-                                    minLength={3}/>
+                                    maxLength={30}
+                                    minLength={5}/>
                     <InputControl control={control} 
                                     name={"password"} 
                                     headerInput="Пароль" 
@@ -48,8 +51,8 @@ export default function LogIn()
                                             message: 'Пожалуйста, введите пароль пользователя!',
                                         },
                                     ]}
-                                    maxLength={100}
-                                    minLength={3}
+                                    maxLength={50}
+                                    minLength={6}
                                     type="password"/>
                 <Form.Item>
                     <Button className="button-style-login" type="primary" htmlType="submit">Войти</Button>

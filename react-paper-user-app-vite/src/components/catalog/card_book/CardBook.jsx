@@ -1,22 +1,40 @@
 import { Button, Flex, Row } from "antd"
-import "../../../styles/stylesForComponents/catalog/cardBook/cardBook.css"
 import "./index.css"
 
-export default function CardBook() {
+export default function CardBook({nameBook}) {
+
+    const onClickBook = (event) => {console.log(event.target, nameBook)}
+
     return (
-        <Button type="text" className="container-card-button">
-            <Flex className=".container-card" justify={"center"} align="center" vertical>
+        <Button type="text" 
+                className="container-card-button"
+                onClick={onClickBook}>
+            <Flex className=".container-card" 
+                  justify={"center"} 
+                  align="center" 
+                  vertical>
                 <Row className="image-style-book">
-                    <img style={{width: "100%"}} src="/ProjectImages/Books/test2.jpg" />
+                    <img style={{width: "100%"}} 
+                     src="/ProjectImages/Books/test2.jpg" />
                 </Row>
-                <Flex justify={"space-between"}>
-                    <p className="name-book-style">Хрупкое равновесие хрупкое</p>
-                    <img style={{width: "10%"}} className="favourite-icon-style" src="/ProjectImages/heart.png" alt="heart" />
+                <Flex justify={"space-between"} 
+                      align="flex-start" 
+                      style={{width: "92%", marginTop:"3%"}}>
+                    <Row>
+                        <p className="name-book-style">{nameBook}</p>
+                    </Row>
+                    <img style={{width: "9%"}} 
+                        src="/ProjectImages/heart.png" 
+                        alt="facourite" />
                 </Flex>
-                <div id="author-subscribe-section">
-                    <p id="author-text">Уолтер Тевис</p>
-                    <p id="subscribe-type-text">Стандарт</p>
-                </div>
+                <Flex className="author-subscribe-section" 
+                      justify={"space-between"} 
+                      align="flex-start" 
+                      style={{marginTop: "2%", width: "92%"}}>
+                    <p className="author-text-style" 
+                       style={{width: "92%"}}>{nameBook}</p>
+                    <p className="subscribe-type-text-style">Стандарт</p>
+                </Flex>
         </Flex>
         </Button>
         

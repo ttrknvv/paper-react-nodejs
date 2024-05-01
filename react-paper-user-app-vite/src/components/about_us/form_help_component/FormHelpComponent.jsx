@@ -1,4 +1,5 @@
-import { Button, Col, Form, Input, Row, message } from "antd"
+import { Button, Col, Form, Input, Row, Tooltip, message } from "antd"
+import { InfoCircleOutlined } from '@ant-design/icons';
 import { useForm, Controller } from 'react-hook-form';
 import { helpMessageScheme } from "../../../schemes/schemeHelp";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -7,7 +8,7 @@ import React from "react";
 
 export default function FormHelp()
 {
-    const { control, handleSubmit ,formState: {errors},} = useForm({resolver: yupResolver(helpMessageScheme)});
+    const { control, handleSubmit, formState: {errors},} = useForm({resolver: yupResolver(helpMessageScheme)});
 
     const [messageApi, contextHolder] = message.useMessage();
     const key = 'updatable';
@@ -42,7 +43,7 @@ export default function FormHelp()
     return (
         <Form
             form={form}
-            onFinish={handleSubmit(onSubmit)}
+            onFinish={handleSubmit(onSubmit, onErrorSubmit)}
             onFinishFailed={onErrorSubmit}
             autoComplete="off"
             className="form-style">
@@ -68,7 +69,15 @@ export default function FormHelp()
                                         message: 'Пожалуйста, перед отправкой сообщения опишите вашу проблему!',
                                     },
                             ]}>
-                                <Input className="form-input-style" {...field} maxLength={2000} minLength={10} placeholder="Описать проблему" />
+                                <Input className="form-input-style" 
+                                    {...field} 
+                                    maxLength={2000}
+                                    minLength={10}  
+                                    placeholder="Описать проблему"
+                                    suffix={
+                                        <Tooltip title={"Помощь"}>
+                                            <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)' }} />
+                                        </Tooltip>} />
                         </Form.Item>} />
                 </Col>
                 <Col span={4} className="form-container-button-style">

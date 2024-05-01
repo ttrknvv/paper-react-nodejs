@@ -25,6 +25,8 @@ export default function App() {
             colorPrimary: '#AC7373',
             colorBgContainer: "transparent",
             colorErrorBorderHover: "#ed4d4e",
+            colorText: "#AC7373",
+            fontFamily: "Inter"
         }
     };
 

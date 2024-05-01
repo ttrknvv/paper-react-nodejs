@@ -3,9 +3,10 @@ import InputControl from "../../InputControl/InputControl";
 import { Button, Col, Flex, Form, Row, notification } from "antd";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { registerBookScheme } from "../../../schemes/schemeHelp";
 
 export default function Register() {
-    const { control, handleSubmit ,formState: {errors}, setError} = useForm();
+    const { control, handleSubmit ,formState: {errors}, setError} = useForm({resolver: yupResolver(registerBookScheme)});
     const [form] = Form.useForm();
 
     const [api, contextHolder] = notification.useNotification();
@@ -27,14 +28,14 @@ export default function Register() {
 
 
     const onErrorSubmit = (data) => {
-        console.log(data)
+        console.log("error", errors)
         openNotificationWithIcon('error')
         };
     
     return (
         <Form
                 form={form}
-                onFinish={handleSubmit(onSubmit)}
+                onFinish={handleSubmit(onSubmit, onErrorSubmit)}
                 onFinishFailed={onErrorSubmit}
                 className="form-style"
                 scrollToFirstError>
@@ -53,8 +54,8 @@ export default function Register() {
                                             message: 'Пожалуйста, введите логин!',
                                         },
                                     ]}
-                                    maxLength={100}
-                                    minLength={3}
+                                    maxLength={30}
+                                    minLength={5}
                                     suffixText={"Логин да да да"}/>
                         </Col>
                         <Col span={12}>
@@ -70,8 +71,8 @@ export default function Register() {
                                             message: 'Пожалуйста, введите номер телефона!',
                                         },
                                     ]}
-                                    maxLength={100}
-                                    minLength={3}
+                                    maxLength={13}
+                                    minLength={11}
                                     suffixText={"Логин да да да"}/>
                         </Col>
                     
@@ -91,8 +92,8 @@ export default function Register() {
                                             message: 'Пожалуйста, введите пароль!',
                                         },
                                     ]}
-                                    maxLength={100}
-                                    minLength={3}
+                                    maxLength={50}
+                                    minLength={6}
                                     type="password"/>
                             
                         </Col>
@@ -110,8 +111,7 @@ export default function Register() {
                                             message: 'Пожалуйста, введите электронную почту!',
                                         },
                                     ]}
-                                    maxLength={100}
-                                    minLength={3}
+                                    maxLength={50}
                                     type="password"/>
                         </Col>
                     </Row>
@@ -129,8 +129,6 @@ export default function Register() {
                                             message: 'Пожалуйста, введите электронную почту!',
                                         },
                                     ]}
-                                    maxLength={100}
-                                    minLength={3}
                                     widthContainer="100%"
                                     suffixText={"Логин да да да"}/>
                     </Row>

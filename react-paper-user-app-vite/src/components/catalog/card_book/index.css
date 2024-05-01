@@ -1,11 +1,8 @@
 .container-card-button {
-    width: 22%;
+    width: 23%;
     height: max-content;
-}
-
-.container-card {
-    color: #AC7373;
-
+    margin-top: 1%;
+    padding: 1% 0 1% 0;
 }
 
 .image-style-book {
@@ -13,11 +10,24 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), -4px 0 4px rgba(0, 0, 0, 0.4);
 }
 
-.favourite-icon-styl {
-    width: 10%;
-}
-
 .name-book-style {
     color: #AC7373;
+    font-size: 1vw;
+    font-weight: 600;
+    text-wrap: wrap;
+    text-align: left;
+}
+
+.author-text-style {
+    color: #AC7373;
+    font-weight: 500;
+    font-size: 1vw;
+    text-wrap: wrap;
+    text-align: left;
+}
+
+.subscribe-type-text-style {
+    color: #930000;
+    font-weight: 600;
     font-size: 1vw;
 }

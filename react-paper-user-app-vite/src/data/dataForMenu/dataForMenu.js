@@ -1,6 +1,5 @@
 import favourite from '/ProjectImages/favourite.png'
 import profile from '/ProjectImages/profile.png'
-import {LogoutOutlined} from '@ant-design/icons';
 
 export const textMenuElements = [
     {
