@@ -17,7 +17,7 @@ export default function MainPage() {
                 <CarouselBooks />
                 <Input suffix={<SearchOutlined />}
                         placeholder="Книга или автор"
-                        className="search-book-style"
+                        className="search-book-style-main"
                         onPressEnter={onEnter}
                         maxLength={50} />
 
