@@ -1,4 +1,10 @@
 .main-favourite-style {
     width: 100%;
-    border: 2px solid black;
+}
+
+.pagination-style {
+    font-size: 1.4vw;
+    font-weight: 500;
+    color:#AC7373 !important;
+    margin-top: 2%;
 }

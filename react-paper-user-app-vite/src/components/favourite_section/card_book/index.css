@@ -1,6 +1,13 @@
+.container-button-card-book {
+    width: 93%;
+    height: max-content;
+    border: none;
+    padding: 1%;
+}
+
 .container-card-book {
     height: max-content;
-    width: 93%;
+    width: auto;
     border-radius: 5px;
     background-color: #AC7373;
 }
@@ -9,10 +16,60 @@
     height: 30%;
     width: 16%;
     border-radius: 5px;
+    padding: 1.2%;
 }
 
 .image-book-container img {
     height: 100%;
     width: 100%;
     border-radius: 5px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), -4px 0 4px rgba(0, 0, 0, 0.4);
+}
+
+.description-book-favourite-container {
+    width: 76%;
+    height: auto;
+    color: #F1EDE2;
+    padding: 1.2%;
+}
+
+.description-book-favourite-container .name-book {
+    font-weight: 600;
+    font-size: 1vw;
+    text-wrap: wrap;
+}
+
+.description-book-favourite-container .author-book {
+    font-weight: 400;
+    margin-top: 1%;
+    font-size: 1vw;
+    text-wrap: wrap;
+}
+
+.description-book-favourite-container .description-book {
+    font-weight: 400;
+    margin-top: 5%;
+    font-size: 0.9vw;
+    text-wrap: wrap;
+    -webkit-line-clamp:8;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    text-align: justify;
+    overflow: hidden;
+}
+
+.sub-info-book {
+    padding: 1%;
+    width: 8%;
+}
+
+.sub-info-book img {
+    width: 40%;
+}
+
+.subscribe-type-text-style {
+    color: #930000;
+    font-weight: 600;
+    font-size: 0.9vw;
+    margin-top: 10%;
 }

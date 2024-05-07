@@ -21,6 +21,10 @@ export default function Catalog() {
   const itemsPerPage = 16;
 
   const handlePageChange = (page) => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'// Добавляем плавную прокрутку
+    });
     setCurrentPage(page);
   };
 

@@ -1,13 +1,37 @@
-import { Flex } from "antd";
+import { Button, Flex, Row } from "antd";
 import "./index.css"
 
 
-export default function CardBook() {
+export default function CardBook({name}) {
+
+    const onClick = () => console.log("click ", name)
+
     return (
-        <Flex className="container-card-book">
-            <div className="image-book-container">
-                <img  src="/ProjectImages/Books/test2.jpg"/>
-            </div>
-        </Flex>
+        <Button type="text" 
+                className="container-button-card-book"
+                onClick={onClick}>
+            <Flex className="container-card-book">
+                <div className="image-book-container">
+                    <img  src="/ProjectImages/Books/test2.jpg"/>
+                </div>
+                <Flex className="description-book-favourite-container" vertical>
+                    <Row className="name-book">{name}</Row>
+                    <Row className="author-book">Стивен Кинг</Row>
+                    <Row className="description-book">Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг
+                    Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг
+                    Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг
+                    Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг
+                    Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг Стивен Кинг
+                            </Row>
+                </Flex>
+                <Flex className="sub-info-book"
+                      align="flex-end"
+                      justify="right"
+                      vertical>
+                        <img src="/ProjectImages/activeFavourite.png" />
+                        <p className="subscribe-type-text-style">Стандарт</p>
+                </Flex>
+            </Flex>
+        </Button>
     )
 }
