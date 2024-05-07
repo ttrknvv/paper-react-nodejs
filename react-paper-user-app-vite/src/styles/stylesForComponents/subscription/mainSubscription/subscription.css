@@ -63,3 +63,24 @@
 .submit-button:active {
     background-color: #8d5858 !important;
 }
+
+.sales-style {
+    border: 3px solid #930000;
+    width: 100%;
+    height: 6vw;
+    border-radius: 10px;
+    font-size: 1vw;
+}
+
+.button-modal-style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4% 7%;
+    font-size: 1vw;
+}
+
+.title-sales-style {
+    color: #AC7373;
+    font-size: 2vw;
+}

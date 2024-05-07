@@ -11,6 +11,8 @@ const Subscription = lazy(() =>  import("../subscription/main_subscription/Subsc
 const NotFound = lazy(() =>  import("../notFound/NotFound"))
 const MainPage = lazy(() =>  import("../mainPage/MainPage"))
 const Favourite = lazy(() =>  import("../favourite_section/Favourite"))
+const ViewBook = lazy(() =>  import("../book_view/ViewBook"))
+
 
 
 
@@ -66,6 +68,10 @@ export const Router = () =>
                             {
                                 path: "/favourite",
                                 element: <Favourite />
+                            },
+                            {
+                                path: "/book/:id",
+                                element: <ViewBook />
                             }
                         ]
                     }

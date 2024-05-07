@@ -20,13 +20,13 @@ export default function App() {
           itemSelectedColor: "#930000",
           titleFontSizeLG: "1.8vw"
         },
-        },
+    },
         token: {
             colorPrimary: '#AC7373',
             colorBgContainer: "transparent",
             colorErrorBorderHover: "#ed4d4e",
             colorText: "#AC7373",
-            fontFamily: "Inter"
+            fontFamily: "Inter",
         }
     };
 

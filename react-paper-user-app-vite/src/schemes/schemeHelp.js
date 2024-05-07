@@ -1,12 +1,15 @@
 import * as yup from "yup";
 
 export const helpMessageScheme = yup.object().shape({
-    helpMessage: yup.string().trim().min(10, "Маленько").max(2000, "Максимально").required("Для отправки сообщения, распишите подробно о проблеме, с которой вы столкнулись!")
+    helpMessage: yup.string().trim()
+                    .min(10, "Минимальная длина сообщения 10 символов!")
+                    .max(2000, "Максимальная длина сообщение 2000 символов!")
+                    .required("Для отправки сообщения, распишите подробно о проблеме, с которой вы столкнулись!")
   });
 
 export const logInBookScheme = yup.object().shape({
-  login: yup.string().trim().required("Нет логина"),
-  password: yup.string().trim().required("Нет пароля")
+  login: yup.string().trim().required("Введите логин пользователя!"),
+  password: yup.string().trim().required("Введите пароль пользователя!")
 });
 
 export const registerBookScheme = yup.object().shape({
@@ -30,4 +33,11 @@ export const registerBookScheme = yup.object().shape({
   email: yup.string().trim()
             .email("Пожалуйста, введите верный адрес электронной почты!")
             .required("Пожалуйста, введите адрес электронной почты!")
+});
+
+export const reviewTextBook = yup.object().shape({
+  reviewText: yup.string().trim()
+                  .min(10, "Минимальная длина отзыва 10 символов!")
+                  .max(2000, "Максимальная длина отзыва 2000 символов!")
+                  .required("Пожалуйста, перед отправкой отзыва опишите ваши впечатления!")
 });
