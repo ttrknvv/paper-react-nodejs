@@ -2,11 +2,15 @@ import LogIn from "../log_in/LogIn";
 import "../../../styles/stylesForComponents/authorization/authorizationMain/authorization.css"
 import Register from "../register/Register";
 import { Col, Row, Tabs } from "antd";
+import { useNavigate } from "react-router-dom";
 
 export default function Authorization() {
+
+    const navigate = useNavigate();
+
     const items = [
         {
-          key: '1',
+          key: '/signin',
           label: 'Вход',
           children: (<LogIn />),
         },
@@ -16,11 +20,13 @@ export default function Authorization() {
             disabled: true,
         },
         {
-          key: '3',
+          key: '/signup',
           label: 'Регистрация',
           children: (<Register />),
         },
       ];
+
+      const handleTabSelect = (item) => navigate(item) 
 
     return (
         <main className="authorization-container-style">
@@ -29,7 +35,10 @@ export default function Authorization() {
                     <img className="image-style" src="/ProjectImages/Register.png" alt="" />
                 </Col>
                 <Col span={14} style={{marginLeft: "0.3%"}}>
-                    <Tabs size="large" defaultActiveKey="1" items={items} />
+                    <Tabs size="large" 
+                          defaultActiveKey={window.location.pathname} 
+                          items={items}
+                          onChange={handleTabSelect} />
                 </Col>
             </Row>
             

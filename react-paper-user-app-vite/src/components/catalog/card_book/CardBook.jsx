@@ -21,7 +21,7 @@ export default function CardBook({nameBook}) {
                       align="flex-start" 
                       style={{width: "92%", marginTop:"3%"}}>
                     <Row>
-                        <p className="name-book-style">{nameBook}</p>
+                        <p className="name-book-style">{"ыыыыыыыыыыыыыыыыыыыы ыыыыыыыыыыыыыыыыыыыы"}</p>
                     </Row>
                     <img style={{width: "9%"}} 
                         src="/ProjectImages/heart.png" 

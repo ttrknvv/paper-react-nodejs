@@ -73,9 +73,10 @@ export default function FormHelp()
                                     {...field} 
                                     maxLength={2000}
                                     minLength={10}  
+                                    showCount
                                     placeholder="Описать проблему"
                                     suffix={
-                                        <Tooltip title={"Помощь"}>
+                                        <Tooltip title={"Опишите подробно вашу проблему."}>
                                             <InfoCircleOutlined style={{ color: 'rgba(0,0,0,.45)' }} />
                                         </Tooltip>} />
                         </Form.Item>} />

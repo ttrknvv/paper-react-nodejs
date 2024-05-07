@@ -4,32 +4,43 @@ import { Button, Col, Flex, Form, Row, notification } from "antd";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { registerBookScheme } from "../../../schemes/schemeHelp";
+import AuthService from "../../../services/AuthService";
+import inMemoryJWT from "../../../services/inMemoryJWT";
 
 export default function Register() {
     const { control, handleSubmit ,formState: {errors}, setError} = useForm({resolver: yupResolver(registerBookScheme)});
+    
     const [form] = Form.useForm();
 
     const [api, contextHolder] = notification.useNotification();
 
-    const openNotificationWithIcon = (type) => {
-        api[type]({
-          message: 'Notification Title',
-          description:
-            'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
+    const showMessageError = (textError, numberError = '') => {
+        api["error"]({
+          message: `Ошибка ${numberError}`,
+          description: textError,
             placement: "bottom"
         });
       };
 
     const onSubmit = (data) => {
-        console.log("success");
-        console.log(data);
-        openNotificationWithIcon('success')
+        AuthService.register(data)
+        .then((res) => {
+            const {accessToken, accessTokenExpiration} = res.data;
+
+            inMemoryJWT.setToken(accessToken, accessTokenExpiration);
+        })
+        .catch((error) => showMessageError(error.response.data.error, error.response.data.status))
     }
 
 
-    const onErrorSubmit = (data) => {
-        console.log("error", errors)
-        openNotificationWithIcon('error')
+    const onErrorSubmit = (error) => {
+        if(!!error.errorFields) {
+            showMessageError(error.errorFields[0].errors);
+        }
+        else {
+            const key = Object.keys(error)[0]
+            showMessageError(error[key].message)
+        }
         };
     
     return (
@@ -56,7 +67,7 @@ export default function Register() {
                                     ]}
                                     maxLength={30}
                                     minLength={5}
-                                    suffixText={"Логин да да да"}/>
+                                    suffixText={"Логин может состоять из латинских букв и цифр."}/>
                         </Col>
                         <Col span={12}>
                             <InputControl control={control} 
@@ -73,7 +84,7 @@ export default function Register() {
                                     ]}
                                     maxLength={13}
                                     minLength={11}
-                                    suffixText={"Логин да да да"}/>
+                                    suffixText={"Принимаются белорусские форматы номеров: (+375, 375, 80)(25, 29, 33, 44)"}/>
                         </Col>
                     
                     </Row>
@@ -108,7 +119,7 @@ export default function Register() {
                                     rules={[
                                         {
                                             required: true,
-                                            message: 'Пожалуйста, введите электронную почту!',
+                                            message: 'Пожалуйста, повторите введенный вами пароль!',
                                         },
                                     ]}
                                     maxLength={50}
@@ -126,17 +137,17 @@ export default function Register() {
                                     rules={[
                                         {
                                             required: true,
-                                            message: 'Пожалуйста, введите электронную почту!',
+                                            message: 'Пожалуйста, введите адрес электронной почты!',
                                         },
                                     ]}
                                     widthContainer="100%"
-                                    suffixText={"Логин да да да"}/>
+                                    suffixText={"Валидный адрес электронной почты, например: example@gmail.com"}/>
                     </Row>
                         
                         
                 <Form.Item>
                     <Flex justify="center">
-                        <Button className="button-style-register" type="primary" htmlType="submit">Войти</Button>
+                        <Button className="button-style-register" type="primary" htmlType="submit">Регистрация</Button>
                     </Flex>
                 </Form.Item>
             </Form>
