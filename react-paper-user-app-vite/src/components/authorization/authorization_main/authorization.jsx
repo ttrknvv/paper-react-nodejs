@@ -2,11 +2,14 @@ import LogIn from "../log_in/LogIn";
 import "../../../styles/stylesForComponents/authorization/authorizationMain/authorization.css"
 import Register from "../register/Register";
 import { Col, Row, Tabs } from "antd";
-import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import AuthService from "../../../services/AuthService";
+import inMemoryJWT from "../../../services/inMemoryJWT";
+import { useContext } from "react";
+import { AuthContext } from "../../../context/AuthContext";
 
 export default function Authorization() {
-
-    const navigate = useNavigate();
+  const {isUserLogged} = useContext(AuthContext);
 
     const items = [
         {
@@ -26,7 +29,13 @@ export default function Authorization() {
         },
       ];
 
-      const handleTabSelect = (item) => navigate(item) 
+      useEffect(()=> {
+        if(isUserLogged) {
+          AuthService.logout().then(() => {
+            inMemoryJWT.deleteToken();
+        }).catch((error) => console.log(error));
+        }
+      })
 
     return (
         <main className="authorization-container-style">
@@ -36,9 +45,8 @@ export default function Authorization() {
                 </Col>
                 <Col span={14} style={{marginLeft: "0.3%"}}>
                     <Tabs size="large" 
-                          defaultActiveKey={window.location.pathname} 
-                          items={items}
-                          onChange={handleTabSelect} />
+                          defaultActiveKey={'/signin'} 
+                          items={items} />
                 </Col>
             </Row>
             

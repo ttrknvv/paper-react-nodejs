@@ -3,6 +3,11 @@ import "./index.css"
 import Description from "./Description";
 
 export default function DataBookView() {
+    
+    const onClick = () => {
+        console.log("click view")
+    }
+
     return (
         <Flex className="container-view-book">
             <div className="container-view-img-book">
@@ -24,7 +29,18 @@ export default function DataBookView() {
 Описание описание Описание описание Описание описание Описание описание Описание описание Описание описание Описание описание Описание описание Описание описание Описание описание"
 } />
                 <p className="type-sub-style">Доступно по крутой подписке</p>
-                <Button type="primary" className="book-view-button">Оформить</Button>
+                <Button 
+                        onClick={onClick}
+                        type="primary" 
+                        className="book-view-button">Оформить</Button>
+                
+            </Flex>
+            <Flex className="sub-info-view-book"
+                      align="flex-end"
+                      justify="right"
+                      vertical>
+                        <p className="subscribe-type-view-style">Стандарт</p>
+                        <img src="/ProjectImages/activeFavourite.png" />
             </Flex>
         </Flex>
     )

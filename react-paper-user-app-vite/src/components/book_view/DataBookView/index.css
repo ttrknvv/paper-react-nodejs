@@ -1,8 +1,8 @@
 .container-view-book {
-    border: 1px solid black;
     width: 94%;
     margin-top: 2%;
     height: max-content;
+    margin-bottom: 4%;
 }
 
 .container-view-img-book {
@@ -36,13 +36,15 @@
 .description {
     color: #AC7373;
     font-size: 1.2vw;
-    margin-top: 4%;
+    margin-top: 3%;
 }
 
 .show-full-style {
     color: #930000;
     font-size: 1vw;
     padding: 0;
+    margin: 0;
+    height: max-content;
 }
 
 .show-full-style:hover {
@@ -51,17 +53,33 @@
 
 .type-sub-style {
     color: #930000;
-    font-size: 1vw;
+    font-size: 1.4vw;
     font-weight: 600;
-    margin-top: 6%;
+    margin-top: auto;
 }
 
 .book-view-button {
-    width: 15%;
+    width: 17%;
     padding: 2.6%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 0.8vw;
+    font-size: 1vw;
     margin-top: 2.4%;
+}
+
+.sub-info-view-book {
+    padding: 1%;
+    width: 8%;
+}
+
+.sub-info-view-book img {
+    width: 60%;
+    margin-top: 30%;
+}
+
+.subscribe-type-view-style {
+    color: #930000;
+    font-weight: 600;
+    font-size: 1.2vw;
 }

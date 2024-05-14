@@ -5,17 +5,23 @@ import { Flex, Input, Pagination } from "antd";
 import { SearchOutlined } from '@ant-design/icons';
 import { sortItems, sortItemsSubscription } from "../../../data/dataForCatalog/dataForCatalog";
 import { useState } from "react";
+import { useEffect } from "react";
+import BooksClientService from "../../../services/BooksClientService";
 
 
 export default function Catalog() {
 
-  const name = ["name1","name2","name3","na4me","nam5e","na6me","na7me","nam8e",
-  "na9me","na99me","nam11e","na12me","nam13e","na14me","n15ame","nam16e","n17ame","name","name","name","name","name", "tata", "tata1", "tat2", "tat3", "tata4", "tat5",
-  "na9me","na99me","nam11e","na12me","nam13e","na14me","n15ame","nam16e","n17ame","name","name","name","name","name", "tata", "tata1", "tat2", "tat3", "tata4", "tat5",
-  "na9me","na99me","nam11e","na12me","nam13e","na14me","n15ame","nam16e","n17ame","name","name","name","name","name", "tata", "tata1", "tat2", "tat3", "tata4", "tat5",
-"na9me","na99me","nam11e","na12me","nam13e","na14me","n15ame","nam16e","n17ame","name","name","name","name","name", "tata", "tata1", "tat2", "tat3", "tata4", "tat5",
-"na9me","na99me","nam11e","na12me","nam13e","na14me","n15ame","nam16e","n17ame","name","name","name","name","name", "tata", "tata1", "tat2", "tat3", "tata4", "tat5",
-"na9me","na99me","nam11e","na12me","nam13e","na14me","n15ame","nam16e","n17ame","name","name","name","name","name", "tata", "tata1", "tat2", "tat3", "tata4", "tat5"];
+  const [books, setBooks] = useState([])
+
+  useEffect(()=> {
+    BooksClientService.getAllBook()
+    .then((res) => {
+      setBooks(Array.from(res.data.allBooks))
+      console.log(books)
+      console.log(res.data)
+    })
+    .catch((error) => console.log(error));
+  }, [])
 
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 16;
@@ -66,13 +72,18 @@ export default function Catalog() {
               </Flex>
             
               <Flex wrap="wrap" gap={"2.6%"} className="main-catalog-component">
-                  {displayedItems.map((item) => <CardBook nameBook={item} key={item}/>)}
+                  {books.map((book) => <CardBook nameBook={book.name_book} 
+                                                  authorName={book.author_book}
+                                                  typeSubscription={book.typeSubscriptionIdType}
+                                                  isFavourite={true}
+                                                  image={book.image}
+                                                  key={book.id_book}/>)}
             </Flex>
             <Pagination 
               showSizeChanger={false}
               current={currentPage}
               pageSize={itemsPerPage}
-              total={name.length}
+              total={4}
               onChange={handlePageChange}
               className={"pagination-style"}
             />

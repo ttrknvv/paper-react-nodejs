@@ -5,11 +5,19 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import {logInBookScheme} from "../../../schemes/schemeHelp";
 import AuthService from "../../../services/AuthService";
+import inMemoryJWT from "../../../services/inMemoryJWT";
+import { useContext } from "react";
+import { AuthContext } from "../../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 export default function LogIn()
 {
+    const navigate = useNavigate();
+
     const { control, handleSubmit ,formState: {errors},} = useForm({resolver: yupResolver(logInBookScheme)} );
     const [form] = Form.useForm();
+
+    const {setIsUserLogged} = useContext(AuthContext);
 
     const onSubmit = (data) => {
         console.log(data)
@@ -18,8 +26,15 @@ export default function LogIn()
             const {accessToken, accessTokenExpiration} = res.data;
 
             inMemoryJWT.setToken(accessToken, accessTokenExpiration);
+
+            setIsUserLogged(true)
+
+            navigate("/")
         })
-        .catch(() => console.log("error FF"));
+        .catch((error) => {
+            console.log(error)
+            setIsUserLogged(false)
+        });
     }
 
     return (

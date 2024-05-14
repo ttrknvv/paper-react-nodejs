@@ -1,0 +1,41 @@
+.form-style-create-book {
+    margin-top: 2%;
+    width: max-content;
+}
+
+.input-data-style-create-book {
+    width: 70vw;
+    background-color: transparent;
+    border: 3px solid #AC7373;
+    padding: 2%;
+    font-size: 1.3vw;
+}
+
+.input-data-style-create-book-description {
+    width: 70vw;
+    background-color: transparent;
+    border: 3px solid #AC7373;
+    padding: 2%;
+    font-size: 1.3vw;
+}
+
+.style-upload {
+    width: 20%;
+    font-size: 1vw;
+}
+
+.menu-style-sub {
+    font-size: 1.3vw;
+    padding: 12%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-style-pop {
+    font-size: 1.3vw;
+    width: 20%;
+    height: 7vh;
+    display: flex;
+    align-items: center;
+}

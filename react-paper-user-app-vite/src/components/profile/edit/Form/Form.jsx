@@ -1,22 +1,14 @@
-import "../../../styles/stylesForComponents/authorization/register/register.css"
-import InputControl from "../../InputControl/InputControl";
+import InputControl from "../../../InputControl/InputControl";
 import { Button, Col, Flex, Form, Row, notification } from "antd";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { registerBookScheme } from "../../../schemes/schemeHelp";
-import AuthService from "../../../services/AuthService";
-import inMemoryJWT from "../../../services/inMemoryJWT";
-import { useContext } from "react";
-import { AuthContext } from "../../../context/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { registerBookScheme } from "../../../../schemes/schemeHelp";
+import "./index.css"
 
-export default function Register() {
+export default function FormEditProfile() {
+
     const { control, handleSubmit ,formState: {errors}, setError} = useForm({resolver: yupResolver(registerBookScheme)});
     
-    const navigate = useNavigate();
-
-    const {setIsUserLogged} = useContext(AuthContext);
-
     const [form] = Form.useForm();
 
     const [api, contextHolder] = notification.useNotification();
@@ -30,34 +22,15 @@ export default function Register() {
       };
 
     const onSubmit = (data) => {
-        AuthService.register(data)
-        .then((res) => {
-            const {accessToken, accessTokenExpiration} = res.data;
-
-            inMemoryJWT.setToken(accessToken, accessTokenExpiration);
-            setIsUserLogged(true)
-            navigate("/")
-
-        })
-        .catch((error) => {
-            console.log(error)
-            showMessageError(error.response.data.error, error.response.data.status)
-            setIsUserLogged(false)
-        })
+        console.log('save')
     }
 
 
     const onErrorSubmit = (error) => {
-        if(!!error.errorFields) {
-            showMessageError(error.errorFields[0].errors);
-        }
-        else {
-            const key = Object.keys(error)[0]
-            showMessageError(error[key].message)
-        }
+        console.log("error")
         };
-    
-    return (
+
+    return(
         <Form
                 form={form}
                 onFinish={handleSubmit(onSubmit, onErrorSubmit)}
@@ -73,12 +46,6 @@ export default function Register() {
                                     classNameHeaderInput={"header-input-style"}
                                     classNameInput={"input-data-style-register"}
                                     placeHolder={"Логин"}
-                                    rules={[
-                                        {
-                                            required: true,
-                                            message: 'Пожалуйста, введите логин!',
-                                        },
-                                    ]}
                                     maxLength={30}
                                     minLength={5}
                                     suffixText={"Логин может состоять из латинских букв и цифр."}/>
@@ -90,12 +57,6 @@ export default function Register() {
                                     classNameHeaderInput={"header-input-style"}
                                     classNameInput={"input-data-style-register"}
                                     placeHolder={"Номер телефона"}
-                                    rules={[
-                                        {
-                                            required: true,
-                                            message: 'Пожалуйста, введите номер телефона!',
-                                        },
-                                    ]}
                                     maxLength={13}
                                     minLength={11}
                                     suffixText={"Принимаются белорусские форматы номеров: (+375, 375, 80)(25, 29, 33, 44)"}/>
@@ -106,17 +67,11 @@ export default function Register() {
                     <Row>
                         <Col span={12}>
                         <InputControl control={control} 
-                                    name={"password"} 
-                                    headerInput="Пароль" 
+                                    name={"oldPassword"} 
+                                    headerInput="Старый пароль" 
                                     classNameHeaderInput={"header-input-style"}
                                     classNameInput={"input-data-style-register"}
-                                    placeHolder={"Пароль"}
-                                    rules={[
-                                        {
-                                            required: true,
-                                            message: 'Пожалуйста, введите пароль!',
-                                        },
-                                    ]}
+                                    placeHolder={"Старый пароль"}
                                     maxLength={50}
                                     minLength={6}
                                     type="password"/>
@@ -125,11 +80,11 @@ export default function Register() {
 
                         <Col span={12}>
                             <InputControl control={control} 
-                                    name={"acceptPassword"} 
-                                    headerInput="Подтверждение пароля" 
+                                    name={"newPassword"} 
+                                    headerInput="Новый пароль" 
                                     classNameHeaderInput={"header-input-style"}
                                     classNameInput={"input-data-style-register"}
-                                    placeHolder={"Пароль"}
+                                    placeHolder={"Новый пароль"}
                                     rules={[
                                         {
                                             required: true,
@@ -161,10 +116,9 @@ export default function Register() {
                         
                 <Form.Item>
                     <Flex justify="center">
-                        <Button className="button-style-register" type="primary" htmlType="submit">Регистрация</Button>
+                        <Button className="button-style-register" type="primary" htmlType="submit">Сохранить</Button>
                     </Flex>
                 </Form.Item>
             </Form>
-        
     )
 }

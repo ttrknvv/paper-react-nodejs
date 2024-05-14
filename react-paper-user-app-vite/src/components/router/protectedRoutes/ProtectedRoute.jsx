@@ -1,12 +1,14 @@
+import { useContext } from "react";
 import { Outlet } from "react-router-dom";
-import Authorization from "../../authorization/authorization_main/authorization"
+import { AuthContext } from "../../../context/AuthContext";
+import NotFound from "../../notFound/NotFound"
 
 export default function ProtectedRoute() {
-    const isAuth  = false;
-    const noProtected = false;
+    const {isUserLogged}  = useContext(AuthContext);
+
     return (
       <>
-        {isAuth || noProtected ? <Outlet /> : <Authorization />}
+        {isUserLogged ? <Outlet /> : <NotFound />}
       </>
     )
   }

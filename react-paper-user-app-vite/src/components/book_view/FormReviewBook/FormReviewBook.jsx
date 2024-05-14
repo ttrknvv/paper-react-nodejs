@@ -1,17 +1,20 @@
 import "./index.css"
-import { Button, Col, Form, Input, Row, message, notification } from "antd"
+import { Button, Col, Form, Input, Row, message, notification, Rate } from "antd"
 import { useForm, Controller } from 'react-hook-form';
 import { reviewTextBook } from "../../../schemes/schemeHelp";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { BookOutlined } from '@ant-design/icons';
 import React from "react";
+import { useState } from "react";
 
 export default function FormReviewBook()
 {
-    const { control, handleSubmit, formState: {errors},} = useForm({resolver: yupResolver(reviewTextBook)});
+    const { control, handleSubmit, formState: {errors}} = useForm({resolver: yupResolver(reviewTextBook)});
 
     const [api, contextHolder] = notification.useNotification();
     const [messageApi, contextHolderMessage] = message.useMessage();
 
+    const [rateValue, setRateValue] = useState(0);
 
     const showMessageError = (textError, numberError = '') => {
         api["error"]({
@@ -40,7 +43,7 @@ export default function FormReviewBook()
     };
     const onSubmit = (data) => {
         success('dddd');
-        console.log(data);
+        console.log(data, rateValue);
     }
 
     const onErrorSubmit = (error) => {
@@ -69,6 +72,13 @@ export default function FormReviewBook()
                     </Form.Item>
                 </Col>
                 <Col span={4}/>
+            </Row>
+            <Row className="container-style">
+                <Col span={22}>
+                    <Form.Item name={'rate'}>
+                        <Rate className="rate-review-put" character={<BookOutlined />} allowHalf onChange={setRateValue} value={rateValue}  />
+                    </Form.Item>
+                </Col>
             </Row>
             <Row className="container-style">
                 <Col span={18}>

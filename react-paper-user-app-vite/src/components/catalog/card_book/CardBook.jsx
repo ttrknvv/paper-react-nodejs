@@ -1,7 +1,13 @@
 import { Button, Flex, Row } from "antd"
 import "./index.css"
 
-export default function CardBook({nameBook}) {
+export default function CardBook({
+    nameBook,
+    authorName,
+    typeSubscription,
+    isFavourite = false,
+    image
+}) {
 
     const onClickBook = (event) => {console.log(event.target, nameBook)}
 
@@ -15,16 +21,16 @@ export default function CardBook({nameBook}) {
                   vertical>
                 <Row className="image-style-book">
                     <img style={{width: "100%"}} 
-                     src="/ProjectImages/Books/test2.jpg" />
+                     src={ `data:image/jpeg;base64, ${image}`} />
                 </Row>
                 <Flex justify={"space-between"} 
                       align="flex-start" 
                       style={{width: "92%", marginTop:"3%"}}>
                     <Row>
-                        <p className="name-book-style">{"ыыыыыыыыыыыыыыыыыыыы ыыыыыыыыыыыыыыыыыыыы"}</p>
+                        <p className="name-book-style">{nameBook}</p>
                     </Row>
                     <img style={{width: "9%"}} 
-                        src="/ProjectImages/heart.png" 
+                        src={isFavourite ? "/ProjectImages/activeFavourite.png" : "/ProjectImages/heart.png"}
                         alt="facourite" />
                 </Flex>
                 <Flex className="author-subscribe-section" 
@@ -32,8 +38,12 @@ export default function CardBook({nameBook}) {
                       align="flex-start" 
                       style={{marginTop: "2%", width: "92%"}}>
                     <p className="author-text-style" 
-                       style={{width: "92%"}}>{nameBook}</p>
-                    <p className="subscribe-type-text-style">Стандарт</p>
+                       style={{width: "92%"}}>{authorName}</p>
+                    <p className="subscribe-type-text-style">
+                        {
+                            typeSubscription === 1 ? 'Без подписки' : typeSubscription === 2 ? 'Стандарт' : 'Премиум'
+                        }
+                        </p>
                 </Flex>
         </Flex>
         </Button>

@@ -1,0 +1,70 @@
+.main-profile-container {
+    width: 100%;
+    height: max-content;
+    margin-top: 2%;
+}
+
+.image-container {
+    width: 29vw;
+    height: 64vh;
+    margin-left: 12%;
+    border-radius: 5px;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), -4px 0 4px rgba(0, 0, 0, 0.4);
+}
+
+.container-data-profile {
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+}
+
+.header-info {
+    color: #930000;
+    font-size: 1.3vw;
+    font-weight: 600;
+}
+
+.item-info {
+    color: #AC7373;
+    font-size: 1.1vw;
+}
+
+.edit-button-profile {
+    font-size: 1.2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    height: 80%;
+    margin-left: 2%;
+}
+
+.edit-button-profile:hover {
+    background-color: #AC7373 !important;
+    box-shadow: 0 0 8px #930000;
+}
+
+.edit-button-profile:active {
+    background-color: #8d5858 !important;
+}
+
+.logout-button-profile {
+    height: 10vh;
+    width: 6.6vw;
+    margin-left: 2%;
+    display: flex;
+}
+
+.logout-button-profile img {
+    width: 100%;
+    height: 100%;
+    padding-left: 10%;
+    padding-top: 4%;
+}

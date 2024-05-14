@@ -1,0 +1,32 @@
+.container-img-edit {
+    width: 24vw;
+    height: 54vh;
+    border-radius: 5px;
+}
+
+.container-img-edit img {
+    width: 100%;
+    border-radius: 5px;
+    height: 100%;
+}
+
+.button-edit-photo {
+    width: 50%;
+    font-size: 1.4vw;
+    height: 10vh;
+}
+
+.button-edit-photo:hover {
+    background-color: #AC7373 !important;
+    box-shadow: 0 0 8px #930000;
+}
+
+.button-edit-photo:active {
+    background-color: #8d5858 !important;
+}
+
+.nav-back-style {
+    width: 60%;
+    height: 10%;
+    margin-left: 38%;
+}

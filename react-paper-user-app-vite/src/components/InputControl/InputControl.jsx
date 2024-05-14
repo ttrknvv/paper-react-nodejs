@@ -16,8 +16,11 @@ export default function InputControl({
     headerInput,
     classNameHeaderInput,
     suffixText,
-    widthContainer})
+    widthContainer,
+    otherFields})
 {
+
+    
         switch(type) {
             case "default":
                 return (<Controller
@@ -60,5 +63,28 @@ export default function InputControl({
                                             autoComplete="off" />
                                 </Form.Item>
                             </div>} />)
+            case "textArea":
+                const { TextArea } = Input;
+                return (
+                    <Controller
+                    name={name}
+                    control={control}
+                    render={({field}) => 
+                            <div>
+                                {headerInput && <><div className={classNameHeaderInput} style={{marginBottom: "1%"}}>{headerInput}</div></>}
+                                <Form.Item
+                                    name={name}
+                                    rules={rules}>
+                                        <TextArea {...field} 
+                                            className={classNameInput} 
+                                            maxLength={maxLength} 
+                                            minLength={minLength} 
+                                            placeholder={placeHolder}
+                                            autoComplete="off"
+                                            {...otherFields}
+                                             />
+                                </Form.Item>
+                            </div>} />
+                )
         }
 }

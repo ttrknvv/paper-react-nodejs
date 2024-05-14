@@ -12,6 +12,10 @@ const NotFound = lazy(() =>  import("../notFound/NotFound"))
 const MainPage = lazy(() =>  import("../mainPage/MainPage"))
 const Favourite = lazy(() =>  import("../favourite_section/Favourite"))
 const ViewBook = lazy(() =>  import("../book_view/ViewBook"))
+const Profile = lazy(() =>  import("../profile/Profile"))
+const EditProfile = lazy(() =>  import("../profile/edit/EditProfile"))
+const CreateBook = lazy(() =>  import("../book_view/Create/CreateBook"))
+
 
 
 
@@ -54,24 +58,37 @@ export const Router = () =>
                                 path: "/profile",
                                 element: <ProtectedRoute />, 
                                 children: [
-                                    {element: <AboutUs />, index: true}
+                                    {element: <Profile />, index: true}
                                 ]
                             },
                             {
-                                path: "/signin",
+                                path: "/authorization",
                                 element: <Authorization />, 
                             },
                             {
-                                path: "/signup",
-                                element: <Authorization />,
-                            },
-                            {
                                 path: "/favourite",
-                                element: <Favourite />
+                                element: <ProtectedRoute />,
+                                children: [
+                                    {element: <Favourite />, index: true}
+                                ]
                             },
                             {
                                 path: "/book/:id",
                                 element: <ViewBook />
+                            },
+                            {
+                                path: "profile/edit",
+                                element: <ProtectedRoute />,
+                                children: [
+                                    {element: <EditProfile />, index: true}
+                                ]
+                            },
+                            {
+                                path: "/book/create",
+                                element: <ProtectedRoute />,
+                                children: [
+                                    {element: <CreateBook />, index: true}
+                                ]
                             }
                         ]
                     }

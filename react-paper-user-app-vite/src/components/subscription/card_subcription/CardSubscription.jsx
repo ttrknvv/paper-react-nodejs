@@ -2,12 +2,17 @@ import { Button, Flex, Modal, Row } from "antd"
 import "../../../styles/stylesForComponents/subscription/mainSubscription/subscription.css"
 import { useState } from "react";
 import SalesSection from "../sales_section/SalesSection";
+import BooksClientService from "../../../services/BooksClientService";
 
 export default function CardSubscription({image, title, cost, description})
 {
     const handleClick = () => {
         console.log("Нажата карточка: " + title)
         setModal1Open(true)
+
+        BooksClientService.getFavourite().then((res) => {
+            console.log(res.data);
+        }).catch((error) => console.log(error))
     }
 
     const [modal1Open, setModal1Open] = useState(false);

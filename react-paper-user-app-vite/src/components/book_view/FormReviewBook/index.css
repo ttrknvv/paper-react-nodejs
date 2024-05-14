@@ -45,3 +45,7 @@
 .ant-input-status-error {
     border-width: 3px !important;
 }
+
+.rate-review-put {
+    color: #930000;
+}
